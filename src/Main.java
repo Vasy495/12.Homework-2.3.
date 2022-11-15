@@ -1,37 +1,25 @@
+import transport.Bus;
 import transport.Car;
+import transport.Train;
 
 import java.time.LocalDate;
-import java.util.SortedMap;
 
 public class Main {
     public static void main(String[] args) {
-        /*Human maxim = new Human(null, "", -1988, "бренд-менеджер");
-        Human anna = new Human("Аня", "Москва", 1993, "методист образовательных программ");
-        Human kate = new Human("Катя", "Калининград", 1992, "продакт-менеджер");
-        Human artem = new Human("Артем", "Москва", 1995, "директор по развитию бизнеса");
-        Human vladimir = new Human("Владимир", "Казань",2001, "");
-
-        System.out.println(maxim);
-        System.out.println(anna);
-        System.out.println(kate);
-        System.out.println(artem);
-        System.out.println(vladimir);
-        System.out.println();*/
 
         Car ladaGranta = new Car("Lada",
                 "Granta",
-                2020,
-                "Россия",
-                "Седан",
+                2015,
+                "Russia",
+                "sedan",
                 4,
-                1.5f,
-                "Красный",
-                "Автомат",
-                "A408AA777",
+                1.6f,
+                "Желтый",
+                "automat",
+                "A408KY777",
                 true,
                 new Car.Key(true, true),
-                new Car.Insurance(
-                        LocalDate.now().plusMonths(3),
+                new Car.Insurance(LocalDate.now().plusMonths(3),
                         1000f,
                         "3232232"));
 
@@ -48,33 +36,43 @@ public class Main {
             System.out.println("Номер корректный");
         }
 
-
-        /*Car audiA8 = new Car("Audi", "A8 L TDI quattro", 3.0, "черный", 2020, "Германия");
-        Car bmw8 = new Car("BMW", "Z8", 3.0, "черный", 2021, "Германия");
-        Car kiaSportage = new Car("Kia", "Sportage", 2.4, "красный", 2018, "Южная Корея");
-        Car hyundaiAvante = new Car("Hyundai", "Avante", 1.6, "оранжевый", 2016, "Южная Корея");*/
-
         System.out.println(ladaGranta);
-       /* System.out.println(audiA8);*/
-        /*System.out.println(bmw8);
-        System.out.println(kiaSportage);
-        System.out.println(hyundaiAvante);*/
         System.out.println();
 
-        //Homework 2.1
-        /*Flower roza = new Flower("Роза", "", "Голландия", 35.59f, 6);
-        Flower hrizantema = new Flower("Хризантема", "", "", 15.00f, 5);
-        Flower pion = new Flower("Пион", "", "Англия", 69.90f, 7);
-        Flower gipsophila = new Flower("Гипсофила", "", "Турция", 19.50f, 10);
+        Train lastochka = new Train("Ласточка",
+                "B-901", 2011,
+                "Россия", "",
+                3500f,
+                "Белорусский вокзал",
+                "Минск-Пассажирский",
+                301f,
+                11);
 
-        System.out.println(roza);
-        System.out.println(hrizantema);
-        System.out.println(pion);
-        System.out.println(gipsophila);
+        Train leningrad = new Train("Ленинград",
+                "D-125", 2019,
+                "Россия", "",
+                1700f,
+                "Ленинградский вокзал",
+                "Ленинград-Пассажирский",
+                270f,
+                8);
 
-        Bouquet buket = new Bouquet(new Flower[]{roza, hrizantema});
-        System.out.println(buket.getCost());
-        System.out.println(buket.getLifeSpane());*/
+        System.out.println(lastochka);
+        System.out.println(leningrad);
+
+        Bus bus1 = new Bus("Автобус 1", "1233", 2016, "Россия", "");
+        Bus bus2 = new Bus("Автобус 2", "1232", 2013, "Белоруссия", "Синий");
+        Bus bus3 = new Bus("Автобус 3", "1235", 2020, "Россия", "Желтый");
+
+        System.out.println(bus1);
+        System.out.println(bus2);
+        System.out.println(bus3);
+
+        ladaGranta.refill();
+        lastochka.refill();
+        bus1.refill();
 
     }
+
+
 }

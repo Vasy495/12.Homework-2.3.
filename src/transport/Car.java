@@ -1,14 +1,8 @@
 package transport;
 import java.time.LocalDate;
 
-public class Car {
-    private final String brand;
-    private final String model;
+public class Car extends Transport {
     private float engineVolume;
-    private String color;
-    private final int year;
-    private final String country;
-
     private String transmission;
     private final String bodyType;
     private String registrationNumber;
@@ -68,14 +62,7 @@ public class Car {
                boolean season,
                Key key,
                Insurance insurance) {
-        this.brand = validationU(brand, defaultValue);
-        this.model = validationU(model, defaultValue);
-        if (year <= 0) {
-            this.year = 2000;
-        } else {
-            this.year = year;
-        }
-        this.country = validationU(country, defaultValue);
+        super(brand, model, year, country, color);
         this.bodyType = validationU(bodyType, defaultValue);
         this.seats = Math.max(seats, 0);
         this.key = key;
@@ -86,6 +73,11 @@ public class Car {
         setTransmission(transmission);
         setRegistrationNumber(registrationNumber);
         setSeason(season);
+    }
+
+    @Override
+    public void refill() {
+        System.out.println("Машины можно заправлять бензином, дизелем на заправке или заряжать на специальных электропарковках");
     }
 
     @Override
@@ -102,21 +94,6 @@ public class Car {
                 ". Резина - " + getSeason();
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public String getCountry() {
-        return country;
-    }
 
     public String getBodyType() {
         return bodyType;
@@ -138,13 +115,6 @@ public class Car {
         }
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = validationU(color, "Белый");
-    }
 
     public String getTransmission() {
         return transmission;
