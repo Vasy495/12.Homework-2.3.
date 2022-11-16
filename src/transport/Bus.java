@@ -8,7 +8,7 @@ public class Bus extends Transport {
 
     @Override
     public void refill() {
-        System.out.println("Автобусы можно заправлять безином и дезелем на зваправке");
+        System.out.println("Автобусы можно заправлять безином и дезелем на заправке");
 
     }
 
